@@ -4,7 +4,7 @@ import useOrderStore from "@/store/useOrderStore";
 import { mockStocks } from "@/utils/mockStocks";
 import { Stock, Holding, OrderPadProps } from "./OrderPad.types";
 
-const OrderPad: React.FC<OrderPadProps> = ({ stock, type, onClose }) => {
+const OrderPad: React.FC<OrderPadProps> = ({  type, onClose }) => {
   const { buyStock, sellStock, holdings } = useOrderStore();
 
   const holdingsToStock = (holdings: Holding[]): Stock[] =>

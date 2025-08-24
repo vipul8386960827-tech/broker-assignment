@@ -1,5 +1,5 @@
 import React from "react";
-import { Holding,PNLCardProps } from "./PNLCard.types";
+import { PNLCardProps } from "./PNLCard.types";
 
 const PNLCard: React.FC<PNLCardProps> = ({ holdings }) => {
   const totalQuantity = holdings.reduce((acc, h) => acc + h.quantity, 0);

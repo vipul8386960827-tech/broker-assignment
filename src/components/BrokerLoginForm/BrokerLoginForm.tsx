@@ -42,8 +42,11 @@ const BrokerLoginForm: React.FC<BrokerLoginFormProps> = ({
         default:
           toast.error("Unexpected error. Please try again.");
       }
-    } catch (error: any) {
-      toast.error(error?.message || "Something went wrong. Please try again.");
+    } catch (error) {
+      // Ensure error is typed as string
+      const errorMessage =
+        error instanceof Error ? error.message : String(error);
+      toast.error(errorMessage || "Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
